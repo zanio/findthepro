@@ -1,0 +1,9 @@
+.Logo{
+    color: green;
+}
+.Logo  small{
+    display: block;
+    font-size: 2em;
+    font-weight: 300;
+    color: rgb(212, 207, 207);
+}

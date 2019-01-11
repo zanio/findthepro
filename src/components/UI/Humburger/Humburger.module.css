@@ -1,0 +1,28 @@
+.Humbugger{
+    display: flex;
+    flex-flow: column;
+    background: black;
+    padding: 5px;
+    cursor: pointer;
+    
+   
+}
+.Humbugger:hover{
+    background-color: chocolate;
+   
+}
+.Humbugger span:nth-of-type(1),
+.Humbugger span:nth-child(2),
+.Humbugger span:nth-child(3){
+    width: 25px;
+    height: 2px;
+    background: rgb(204, 180, 180);
+    margin-bottom: 5px;
+ 
+}
+
+@media(min-width:500px){
+    .Humbugger{
+        display: none;
+    }
+}
