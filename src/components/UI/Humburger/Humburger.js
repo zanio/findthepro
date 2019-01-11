@@ -1,4 +1,7 @@
+//Imported Package(s)from npm
 import React from 'react';
+
+//Application imported modules
 import classes from './Hambugger.css';
 
 

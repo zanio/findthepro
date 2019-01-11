@@ -1,0 +1,38 @@
+.Login Button{
+    margin-top: 10px;
+    display: block;
+    padding: 5px;
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: bold;
+}
+.Login Button:disabled{
+    cursor: not-allowed;
+    background-color: #eee;
+    color: #666;
+
+}
+
+.Login {
+
+        margin:20px auto;
+        width: 80%;
+        text-align: center;
+        box-shadow: 0 1px 2px 1px #ccc;
+        padding: 1em;
+        background-color: white;
+    
+}
+.Login  p{
+    color:rgb(24, 97, 93);
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+.Font{
+    color: rgb(235, 121, 15);
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}

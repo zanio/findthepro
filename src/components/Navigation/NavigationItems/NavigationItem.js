@@ -1,4 +1,7 @@
+//Imported Package(s)from npm
 import React from 'react';
+
+//Application imported modules
 import { NavLink } from 'react-router-dom';
 
 import classes from './NavList.module.css'

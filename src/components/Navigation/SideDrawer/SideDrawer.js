@@ -1,5 +1,7 @@
+//Imported Package(s)from npm
 import React from 'react';
 
+//Application imported modules
 import classes from './SideDrawer.module.css';
 import Logo from '../Logo/Logo';
 import NavigationItems from '../Navigation/NavigationItems';
@@ -19,7 +21,7 @@ const SideDrawer = (props)=>{
      
        <Aux>
            
-     <Backdrop purchasing = {props.open} click={props.close}/> 
+     <Backdrop control = {props.openControl} click={props.closeControl}/> 
     
    <div className={attachedSideDrawer.join(' ')} onClick={props.close}>
    

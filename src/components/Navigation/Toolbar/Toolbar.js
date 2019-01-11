@@ -1,7 +1,10 @@
+//Imported Package(s)from npm
 import React from 'react';
+
+//Application imported modules
 import classes from './Toolbar.module.css';
 import Logo from '../../UI/Logo/Logo';
-import NavItem from '../NavigationItems/NavItem';
+import NavigationItems from '../NavigationItems';
 import Hamburgger from '../../UI/Humburger/Humburger';
 
 const Toolbar = (props)=>{
@@ -13,7 +16,7 @@ const Toolbar = (props)=>{
         <Logo />
        </div>
         <nav className={classes.DesktopOnly}>
-            <NavItem idToken={props.idToken} />
+            <NavigationItems idToken={props.idToken} />
         </nav>
         
     </header>

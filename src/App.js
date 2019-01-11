@@ -1,53 +1,51 @@
+//Imported Package(s)from npm
 import React, { Component } from 'react';
 import { Route, Switch,withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux'
 
-import '../App.css';
+//Application imported modules
+import './App.css';
 import Aux from './HiherOrderCmp/AuxHoc';
-import classes from '../components/layout/layout.css';
-import Layout from '../components/layout/layout'
+import classes from './containers/Layout/Layout.module.css';
+import Layout from './containers/Layout/Layout'
 import Footer from '../container/footer/footer';
 
 import * as actionCreator from '../store/actions/index';
 import asyncComponent from '../Hoc/asyncComponent/asyncComponent';
 
-
-const asynSuccess = asyncComponent( () => {
-  return import('../components/UI/SuccessMessage/success');
-}); 
-
-const asynOrders = asyncComponent( () => {
-  return import('./orders/oders');
-}); 
-
-const asynBuggerBuilder = asyncComponent( () => {
-  return import('./buggerBuilder/BuggerBuilder');
-}); 
-
-const asynCheckout = asyncComponent( () => {
-  return import('../container/Checkout/Checkout');
-}); 
-
+//React Lazy Loading Effect
 const asynHome = asyncComponent( () => {
-  return import('./Home/Home');
+  return import('./containers/pages/Home/Home');
+}); 
+
+const asynGetSupport = asyncComponent( () => {
+  return import('./containers/pages/GetSupport/GetSupport');
+}); 
+
+const asynAboutUs = asyncComponent( () => {
+  return import('./containers/pages/');
+}); 
+
+const asynDownload = asyncComponent( () => {
+  return import('./containers/pages/Download/Download');
+}); 
+
+const asynRegister = asyncComponent( () => {
+  return import('./containers/pages/Register/Register');
 });
 
 const asynLogin = asyncComponent( () => {
-  return import('../container/Auth/Auth');
+  return import('./containers/pages/Login/Login');
 });
 
 const asynLogout = asyncComponent( () => {
-    return import('./Auth/Logout/Logout');
+    return import('./containers/pages/Home/Home');
 });
 
 class App extends Component {
 
   state={
 
-  }
-
-  componentDidMount(){
-    this.props.onTryAuto();
   }
 
  

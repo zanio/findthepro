@@ -1,5 +1,8 @@
-import * as actionTypes from './actionTypes';
+//Imported Package(s)from npm
 import axios from 'axios';
+
+//Application imported modules
+import * as actionTypes from './actionTypes';
 
 export const authStart = () => {
     return{
