@@ -9,7 +9,7 @@ class Footer extends Component{
     render(){
         return(
             <div className={classes.Footer}>
-             <NavigationItems/>
+            
                 <p>&copy; 2018 Aniefiok Akpan made with <FontAwesomeIcon className={classes.Font}
                  icon={faLaptop} color='coral'
                  /> 
