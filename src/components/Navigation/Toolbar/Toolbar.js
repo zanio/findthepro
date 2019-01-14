@@ -8,7 +8,7 @@ import NavigationItems from '../NavigationItems';
 import Hamburgger from '../../UI/Humburger/Humburger';
 
 const Toolbar = (props)=>{
-
+//This Component is for desktop view Alone
   return( 
        <header className={classes.Toolbar}>
         <Hamburgger  clicked ={props.close} />

@@ -1,9 +1,10 @@
 //Imported Package(s)from npm
-import React from 'react';
+import React, { Component } from 'react';
 
 //Application imported modules
 import Aux from '../../../HiherOrderCmp/AuxHoc';
 import classes from './Download.module.css';
+import Spinner from '../../../components/UI/Spinner/Spinner';
 
 
 
@@ -11,7 +12,14 @@ import classes from './Download.module.css';
 class Download extends Component{
 
 state={
-  
+  loading:true
+}
+
+clicked =()=>{
+    setTimeout(()=>{
+        this.setState({loading:false})
+        return <h1>You just clicked here</h1>
+    }, 1000)
 }
 
 
@@ -19,9 +27,9 @@ state={
 
         return(
             <Aux> 
-                <div className={classes.Download}>
+               {this.state.loading ? <div onClick={()=>this.clicked()} className={classes.Download}>
                     Welcome to the Download Page
-                </div>
+                </div>: <Spinner />}
             </Aux>);
   
 };

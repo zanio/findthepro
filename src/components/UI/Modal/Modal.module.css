@@ -1,0 +1,119 @@
+.Modal {
+    position: fixed;
+    z-index: 500;
+    background-color: ghostwhite;
+    width: 80%;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px black;
+    padding: 16px;
+    border-radius: 10px 0 10px 0;
+    left: 15%;
+    top: 20%;
+    color: #666;
+    box-sizing: border-box;
+    animation: anim .5s  linear;
+
+}
+.Modal h3{
+    color: rgb(0, 0, 0);
+    font-family: 'Lucida Sans', sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+    background-color: darkred;
+    color: white;
+    padding: 10px 0;
+}
+
+.Modal p{
+    color: rgb(110, 33, 3);
+    font-family: 'Lucida Sans', sans-serif;
+    font-size: 1.3em;
+    text-align: left;
+}
+.Modal p:nth-child(4){
+    font-weight:bolder;
+    font-size: .9em;
+    display: block;
+    color:rgba(236, 236, 236, 1);
+    background-color: rgba(83, 83, 14, 0.8);
+    text-align: left;
+    padding: 5px 5px;
+
+    text-transform: none;
+}
+.Modal ul{
+    margin-left: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+    padding-left: 0;
+    background-color: darkred;
+    padding: 10px 0;
+    outline: none;
+    box-shadow: 0 1px 2px 0 #ccc;
+}
+.Modal ul li:last-child{
+    margin-bottom: 0;
+}
+.Modal ul li:nth-of-type(even):last-child{
+    
+    padding-bottom: 0px;
+    border-bottom: 0px solid rgb(44, 22, 24);
+}
+
+.Modal ul li:nth-of-type(even){
+    border-bottom: 1px solid rgba(218, 209, 210,.1);
+}
+.Modal ul li:nth-of-type(odd):first-child{
+    padding-top: 0px;
+}
+.Modal ul li:nth-of-type(odd){
+    border-bottom: 1px solid rgba(218, 209, 210,.1);
+}
+
+.Modal ul li{
+    list-style: none;
+    padding: 5px;
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+  
+}
+
+@keyframes anim {
+    0%{
+        transform: rotate(0deg);
+        
+    }
+    50%{
+       
+        
+        
+
+        transform: scale(.4);
+    }
+    
+    100%{
+       
+        transform: scale(.6);
+        
+    }
+}
+
+
+
+@media (min-width: 600px) {
+    .Modal {
+        width: 500px;
+        left: calc(50% - 250px);
+    }
+}
+
+@media (max-width: 600px) {
+    .Modal {
+        left: 10%;
+        top: 10%;;
+    }
+    .Modal h3{
+        padding: .2em .2em;
+    }
+}

@@ -1,14 +1,15 @@
 //Imported Package(s)from npm
-import React from 'react';
+import React, { Component } from 'react';
 
 //Application imported modules
 import Aux from '../../../HiherOrderCmp/AuxHoc';
+import Form from '../../Forms/Form';
 import classes from './Login.module.css';
 
 
 
 
-class GetStarted extends Component{
+class Login extends Component{
 
 state={
   
@@ -19,11 +20,14 @@ state={
         return(
             <Aux> 
                 <div className={classes.Login}>
-                    Welcome to the Login Page
+                <div class="container">
+                   <p ><span>Login</span> In to Your User Account</p>
+                    <Form />
+                </div>
                 </div>
             </Aux>);
   
 };
 }
 
-export default GetStarted;
+export default Login;

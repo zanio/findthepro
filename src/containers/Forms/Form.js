@@ -6,11 +6,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee, faExclamationCircle } from '@fortawesome/free-solid-svg-icons'
 
 //Application imported modules
-import Input from  '../../components/UI/input/Input';
+import Input from  '../../components/inputs/Input';
 import Button from '../../components/UI/Button/Button';
-import classes from './Auth.css';
-import * as actionCreator from '.././../store/actions/index';
-import Spinner from '../../components/UI/Spinner/spinner';
+import classes from './Form.module.css';
+import * as actionCreator from '../../Store/actions/index';
+import Spinner from '../../components/UI/Spinner/Spinner';
 import { checkValidity } from '../../shared/utility';
 
 class Auth extends Component{
@@ -46,6 +46,7 @@ state={
             valid:false,
             touched:false
         }
+
     },
     isSignUp:true
 }
@@ -76,9 +77,10 @@ InputchangedHandler = (event,inputIdentifier) => {
     this.setState({controls:updatedcontrols,formIsValid:formIsValid})
 }
 
-orderHandler= (event)=>{
+sendToServerHandler= (event)=>{
     event.preventDefault();
     this.props.onAuthSend(this.state.controls.email.value,this.state.controls.password.value,this.state.isSignUp);
+    
 }
 
 switchAuthHandler= ()=>{
@@ -118,16 +120,15 @@ switchAuthHandler= ()=>{
             });
 
             let loginDetails = (
-                <form id="form" onSubmit ={this.orderHandler}>
+                <form id="form" onSubmit ={(e)=>this.sendToServerHandler(e)}>
 
                             {dynamicInput}
 
                             <Button 
-
+                            clicked={this.switchAuthHandler}
                             disabled={!this.state.formIsValid}
                                     btnType="Success">
-                                    {this.state.isSignUp ? 'Sign Up':'Login'}
-
+                                   Login
                             </Button>
                 </form>
             );
@@ -147,11 +148,6 @@ switchAuthHandler= ()=>{
         <div className={classes.Login}>
         {isAutheticated}
            {loginDetails}
-    <p>{this.state.isSignUp ? 'You dont have an account no problem, you can quiclky create one!':'Did You Forget Your Password?'}</p>
-    <Button clicked={this.switchAuthHandler}
-        
-                btnType="SignUp">Switch to {!this.state.isSignUp ? 'Sign Up':'Login'} Mode
-        </Button>
             </div>
         );
     }
@@ -162,7 +158,6 @@ const mapStateToProps = state =>{
         loadingSpinner: state.authReducer.loading,
         errorMessage:state.authReducer.error,
         idToken:state.authReducer.idToken,
-        buildingBurger:state.buggerBuilder.building,
         authRedirectPath:state.authReducer.authRedirectPath
     }
 }

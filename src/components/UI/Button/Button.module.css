@@ -1,0 +1,38 @@
+.Button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    font: inherit;
+    padding:  0px 10px 10px 10px;
+    margin: 0px 10px 10px 10px;
+    font-weight: bold;
+}
+.Button:Hover {
+    background-color: #b4cac5;
+}
+.Button:visited{
+    background-color: #324742;
+    outline: none;
+}
+.Button:active{
+    background-color: #071613;
+}
+
+.Success {
+    color: #5C9210;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: rgb(198, 252, 98)
+}
+
+.Danger {
+    color: #fafafa;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: rgb(0, 87, 128)
+}
+
+.SignUp{
+    background-color: #2d9279;
+    color: white;
+}

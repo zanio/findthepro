@@ -1,0 +1,40 @@
+.Artisians{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #666;
+    font-size: 600;
+} 
+.ArtisiansIndividual{
+        box-shadow: 0 1px 2px 1px #ccc;
+        padding: 1em;
+        background-color: white;
+        margin-top: 20px;
+        margin-bottom: 20px;
+       
+} 
+.Artisians h1{
+    font-weight: 800;
+    color: #999;
+    text-align: center;
+    background-color: rgb(150, 49, 49)
+}
+.ArtisiansIndividual p span{
+    font-weight: 800;
+    color: #999;
+}
+.ArtisiansIndividual p:nth-of-type(1) span{
+    font-weight: 800;
+    color: rgb(173, 202, 145)
+}
+.ArtisiansIndividual p:nth-of-type(1) {
+    background-color: rgb(0, 87, 128);
+    padding: .3rem;
+    color: white;
+
+}
+.Artisians Button{
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: .07rem;
+} 
+
+

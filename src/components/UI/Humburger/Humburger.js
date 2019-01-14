@@ -2,7 +2,7 @@
 import React from 'react';
 
 //Application imported modules
-import classes from './Hambugger.css';
+import classes from './Humburger.module.css';
 
 
 const Hamburgger = (props)=>( 

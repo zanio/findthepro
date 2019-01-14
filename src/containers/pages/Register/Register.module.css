@@ -1,5 +1,11 @@
-.Register{
-    color:#222;
-    background-color: blueviolet;
-    width: 100%;
+.Register p{
+    color:white;
+    background-color: #6699c9be;
+    text-align:center;
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+.Register p span{
+    color:rgba(129, 12, 12, 0.918);
+    font-weight: 700;
 }

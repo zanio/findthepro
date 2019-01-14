@@ -1,5 +1,13 @@
 .AboutUs{
-    color:#222;
-    background-color: palevioletred;
+    color:rgb(255, 255, 255);
+    background-color: rgb(168, 191, 207);
     width: 100%;
+    font-size: 2em;
+    text-align: center;
+}
+.AboutUs p span{
+    color:rgb(255, 255, 255);
+    background-color: rgb(40, 83, 29);
+    padding: 10px;
+
 }

@@ -30,7 +30,7 @@
     }
     
     .NavigationItem a{
-        color: white;
+        color: rgb(58, 47, 47);
         height: 100%;
         padding: 19px 10px;
         border-bottom: 4px solid transparent;
@@ -40,8 +40,53 @@
     .NavigationItem a:hover,
     .NavigationItem a:active,
     .NavigationItem a.active{
-        background-color: #8f5c2c;
-        border-bottom: 4px solid #40a4c8;
+        background-color: #40a4c8f3;
+        border-bottom: 4px solid none;
         color: white;
+    }
+   
+    .NavigationItem a.active{
+        background-color: #40a4c87e;
+        border-bottom: 4px solid none;
+        color: rgba(126, 129, 129, 0.836);
+    }
+}
+@media(min-width:600px){
+.NavigationItem a ul{
+    display: none;
+}
+.NavigationItem a:hover ul{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    min-width: 250px;
+    top: 94%;
+    left:-15%;
+    
+    height: auto;
+    background-color: whitesmoke;
+    display: block; 
+    box-shadow: 0 1px 2px 1px rgba(51, 51, 51, 0.705);
+    
+}
+}
+.NavigationItem a:hover{
+    position: relative;
+    display: block;
+}
+
+@media(max-width:600px){
+    .NavigationItem a ul{
+        display: none;
+    }
+    .NavigationItem a:hover ul{
+        padding: 10;
+        height: auto;
+        background-color: rgb(228, 228, 228);
+        display: block; 
+        
+    }
+    .NavigationItem a:hover{
+        display: block;
     }
 }

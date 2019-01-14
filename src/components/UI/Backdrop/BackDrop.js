@@ -2,7 +2,7 @@
 import React from 'react';
 
 //Application imported modules
-import classes from './Backdrop.module.css'
+import classes from './BackDrop.module.css'
 
 const Backdrop = (props) => (
     props.control ? <div className={classes.Backdrop} onClick = {props.click} ></div> : null

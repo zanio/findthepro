@@ -1,9 +1,10 @@
 //Imported Package(s)from npm
-import React from 'react';
+import React, { Component } from 'react';
 
 //Application imported modules
 import Aux from '../../../HiherOrderCmp/AuxHoc';
 import classes from './Register.module.css';
+import FormRegister from '../../Forms/FormRegister';
 
 
 class Registeration extends Component{
@@ -18,7 +19,10 @@ state={
         return(
             <Aux> 
                 <div className={classes.Register}>
-                    Welcome to the Registeration Page
+                <div class="container">
+                   <p><span>Register</span> to Start Using Our Services</p>
+                   <FormRegister/>
+                </div>
                 </div>
             </Aux>);
   

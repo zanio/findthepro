@@ -1,5 +1,11 @@
-.Login{
-    color:#222;
-    background-color: cornflowerblue;
-    width: 100%;
+.Login p{
+    color:white;
+    background-color: #6699c9be;
+    text-align:center;
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+.Login p span{
+    color:rgba(24, 95, 6, 0.918);
+    font-weight: 700;
 }

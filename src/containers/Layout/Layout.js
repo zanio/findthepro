@@ -1,5 +1,5 @@
 //Imported Package(s)from npm
-import React from 'react';
+import React, { Component } from 'react';
 
 //Application imported modules
 import Aux from '../../HiherOrderCmp/AuxHoc';
@@ -22,7 +22,9 @@ sideDrawerCloseHandler = () => {
 sideDrawerToggleHandler = ()=>{
     this.setState(prevState =>{
         return { showSideDrawer:!prevState.showSideDrawer}
+        
     });
+    console.log(this.props.idToken);
 }
     render(){
 
@@ -31,7 +33,7 @@ sideDrawerToggleHandler = ()=>{
         return(
             <Aux> 
             <Toolbar close={this.sideDrawerToggleHandler} idToken={this.props.idToken}/>
-            <SideDrawer openControl={this.state.showSideDrawer} closeControl={this.sideDrawerToggleHandler}/>
+            <SideDrawer idToken={this.props.idToken} openControl={this.state.showSideDrawer} closeControl={this.sideDrawerToggleHandler}/>
             <main className={classes.Layout}>{this.props.children}</main>
             </Aux>)
   

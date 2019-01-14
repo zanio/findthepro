@@ -8,12 +8,12 @@ import './App.css';
 import Aux from './HiherOrderCmp/AuxHoc';
 import classes from './containers/Layout/Layout.module.css';
 import Layout from './containers/Layout/Layout'
-import Footer from '../container/footer/footer';
+import Footer from './components/Footer/Footer';
 
-import * as actionCreator from '../store/actions/index';
-import asyncComponent from '../Hoc/asyncComponent/asyncComponent';
+import * as actionCreator from './Store/actions/index';
+import asyncComponent from './HiherOrderCmp/asyncComponent/asyncComponent';
 
-//React Lazy Loading Effect
+//React Lazy Loading Effect ( Code Spliting )
 const asynHome = asyncComponent( () => {
   return import('./containers/pages/Home/Home');
 }); 
@@ -23,7 +23,7 @@ const asynGetSupport = asyncComponent( () => {
 }); 
 
 const asynAboutUs = asyncComponent( () => {
-  return import('./containers/pages/');
+  return import('./containers/pages/AboutUs/AboutUs');
 }); 
 
 const asynDownload = asyncComponent( () => {
@@ -38,9 +38,33 @@ const asynLogin = asyncComponent( () => {
   return import('./containers/pages/Login/Login');
 });
 
-const asynLogout = asyncComponent( () => {
-    return import('./containers/pages/Home/Home');
+const asynArtisians = asyncComponent( () => {
+  return import('./containers/pages/Artisians/Artisians');
 });
+
+const asynLogout = asyncComponent( () => {
+    return import('./containers/pages/Logout/Logout');
+})
+
+const asynFundAccount = asyncComponent( () => {
+  return import('./containers/pages/FundAccount/FundAccount');
+})
+
+const asynContactUs = asyncComponent( () => {
+  return import('./containers/pages/MyAccount/ContactUs/ContactUs');
+})
+
+const asynInbox = asyncComponent( () => {
+  return import('./containers/pages/MyAccount/Inbox/Inbox');
+})
+
+const asynProfile = asyncComponent( () => {
+  return import('./containers/pages/MyAccount/Profile/Profile');
+});
+
+const asynHomeSignIn = asyncComponent( () => {
+  return import('./containers/pages/HomeSignIn/Home');
+})
 
 class App extends Component {
 
@@ -48,19 +72,50 @@ class App extends Component {
 
   }
 
+  componentDidMount(){
+    this.props.onTryAuto();
+  }
+
  
   render() {
    
+    let Routes =(
+      <Switch>
+        <Route path="/get-support" component = {asynGetSupport} />
+        <Route path="/download"  component = {asynDownload} /> 
+        <Route path="/about-us" exact  component = {asynAboutUs} />
+        <Route path="/register" component = {asynRegister} /> 
+        <Route path="/Artisians"  component = {asynArtisians} />
+        <Route path="/Login" component = {asynLogin} />
+        <Route path="/" exact component = {asynHome} />
+        <Redirect to ="/"/>
+      </Switch>
+    )
+
+    if(this.props.idToken){
+
+     Routes = ( 
+     <Switch>
+        <Route path="/get-support" component = {asynGetSupport} />
+        <Route path="/download"  component = {asynDownload} />  
+        <Route path="/Artisians"  component = {asynArtisians} />
+      <Route path="/logout"  component = {asynLogout} /> 
+      <Route path="/My-Account/inbox"  component = {asynInbox} />
+      <Route path="/My-Account/profile"  component = {asynProfile} /> 
+      <Route path="/My-Account/contact-us"  component = {asynContactUs} />
+      <Route path="/fund-account"  component = {asynFundAccount} />
+      <Route path="/logout"  component = {asynLogout} /> 
+      <Route path="/" exact component = {asynHomeSignIn} />
+      <Redirect to ="/"/>
+      </Switch>
+      )
+    }
   
    return (
       <Aux >
-      <Layout className={classes.Aux} idToken={this.props.idToken}
+      <Layout className={classes.Layout} idToken={this.props.idToken}
       >
-      <Switch>
-      <Route path="/success" component = {asynSuccess} /> 
-      <Route path="/buggerBuilder"  component = {asynBuggerBuilder} />
-      <Route path="/" exact component = {asynHome} />
-      </Switch>
+      {Routes}
       
       </Layout>
       <Footer />
@@ -71,7 +126,6 @@ class App extends Component {
 
 const mapStateToProps = state =>{
   return {
-    purchased:state.order.purchased,
     idToken:state.authReducer.idToken
   }
 }
@@ -83,8 +137,7 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-export default withRouter( connect(mapStateToProps, mapDispatchToProps)(App));
-
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
 /* 
 When using the react-router-dom, 
 For the root url i.e '/' you can use 

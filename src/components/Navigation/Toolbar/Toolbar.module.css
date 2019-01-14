@@ -4,11 +4,13 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #703b09;
+    background-color: #f3f3f3;
+    border-bottom: solid 3px #6699c9be;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+    color:orangered;
     box-sizing: border-box;
     z-index: 90;
 
@@ -17,8 +19,9 @@
 .Toolbar nav{
     height: 100%;
 }
-.Logo{
-    height: 80%;
+.Logo img{
+    height: 30%;
+    width:30%
 }
 
 @media(max-width:499px){
