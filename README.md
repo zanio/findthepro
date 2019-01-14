@@ -20,7 +20,7 @@ Launches the test runner in the interactive watch mode.<br>
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ## How to us the Application:
-After Running npm start and the application is life on your browser, then open Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+After Running npm start and the application is LIVE on your browser, then open Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 On the Home page you can  search for Artisians/Professionals by filtering the two available input (Location and Category) then click search to see the application in action.
 
