@@ -6,6 +6,10 @@ This Application is an Entry to a job challenge by Findthepro limited for the Ro
 
 In the project directory, you can run:
 
+### `npm install`
+
+Install the dependencies in the local node_modules folder. <br>
+
 ### `npm start`
 
 Runs the app in the development mode.<br>
